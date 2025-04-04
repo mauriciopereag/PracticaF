@@ -26,13 +26,34 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Fix MIME type issues
+      - name: Prepare for GitHub Pages
         run: |
           cd dist
           touch .nojekyll
-          # Fix paths in index.html to be relative
-          sed -i 's|src="/PracticaF/|src="./|g' index.html
-          sed -i 's|href="/PracticaF/|href="./|g' index.html
+          # Crear un script temporal para generar el index.html
+          cat > create_index.sh << 'EOF'
+          #!/bin/bash
+          js_file=$(find . -name "index-*.js" -print | sed 's|^./assets/||')
+          css_file=$(find . -name "index-*.css" -print | sed 's|^./assets/||')
+          cat > index.html << EOL
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <link rel="icon" type="image/svg+xml" href="./vite.svg" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Contacto - Seminuevos de Lujo</title>
+              <link rel="stylesheet" href="./assets/${css_file}" />
+            </head>
+            <body>
+              <div id="root"></div>
+              <script type="module" src="./assets/${js_file}"></script>
+            </body>
+          </html>
+          EOL
+          EOF
+          chmod +x create_index.sh
+          bash ./create_index.sh
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
