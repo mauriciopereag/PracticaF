@@ -9,7 +9,8 @@
     "build:github": "vite build && ./fix-paths.sh",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "static": "mkdir -p dist && cp index.html dist/ && npx serve dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

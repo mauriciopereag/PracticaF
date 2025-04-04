@@ -8,52 +8,17 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Prepare for GitHub Pages
+      - name: Prepare static files
         run: |
-          cd dist
-          touch .nojekyll
-          # Crear un script temporal para generar el index.html
-          cat > create_index.sh << 'EOF'
-          #!/bin/bash
-          js_file=$(find . -name "index-*.js" -print | sed 's|^./assets/||')
-          css_file=$(find . -name "index-*.css" -print | sed 's|^./assets/||')
-          cat > index.html << EOL
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <link rel="icon" type="image/svg+xml" href="./vite.svg" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>Contacto - Seminuevos de Lujo</title>
-              <link rel="stylesheet" href="./assets/${css_file}" />
-            </head>
-            <body>
-              <div id="root"></div>
-              <script type="module" src="./assets/${js_file}"></script>
-            </body>
-          </html>
-          EOL
-          EOF
-          chmod +x create_index.sh
-          bash ./create_index.sh
+          mkdir -p dist
+          cp index.html dist/
+          touch dist/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
