@@ -2,20 +2,23 @@
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import './ImageCarousel.css';
+import autoImg1 from '/assets/auto1.jpg';
+import autoImg2 from '/assets/auto2.jpg';
+import autoImg3 from '/assets/auto3.jpg';
 
 function ImageCarousel() {
     const items = [
         {
             name: "Porshe 911 GT3 RS",
-            image: "./assets/auto1.jpg"
+            image: autoImg1
         },
         {
             name: "Ferrari F430",
-            image: "./assets/auto2.jpg"
+            image: autoImg2
         },
         {
             name: "Mercedes Benz AMG GT",
-            image: "./assets/auto3.jpg"
+            image: autoImg3
         }
     ];
 
