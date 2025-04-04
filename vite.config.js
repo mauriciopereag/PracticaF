@@ -6,5 +6,14 @@ export default defineConfig(({ mode }) => {
     return {
         base: mode === 'production' ? '/PracticaF/' : '/',
         plugins: [react()],
+        build: {
+            rollupOptions: {
+                output: {
+                    entryFileNames: 'assets/[name].js',
+                    chunkFileNames: 'assets/[name].js',
+                    assetFileNames: 'assets/[name].[ext]'
+                }
+            }
+        }
     }
 })
