@@ -16,9 +16,16 @@ jobs:
 
       - name: Prepare static files
         run: |
-          mkdir -p dist
+          mkdir -p dist/assets
           cp index.html dist/
+          cp home.html dist/
+          cp contact.html dist/
           touch dist/.nojekyll
+          
+          # Crear imágenes de muestra simples
+          echo '<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="600" fill="#0044AA"/></svg>' > dist/assets/auto1.svg
+          echo '<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="600" fill="#AA0000"/></svg>' > dist/assets/auto2.svg
+          echo '<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg"><rect width="800" height="600" fill="#00AA44"/></svg>' > dist/assets/auto3.svg
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
