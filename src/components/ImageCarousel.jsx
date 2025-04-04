@@ -7,15 +7,15 @@ function ImageCarousel() {
     const items = [
         {
             name: "Porshe 911 GT3 RS",
-            image: "/assets/auto1.jpg"
+            image: "./assets/auto1.jpg"
         },
         {
             name: "Ferrari F430",
-            image: "/assets/auto2.jpg"
+            image: "./assets/auto2.jpg"
         },
         {
             name: "Mercedes Benz AMG GT",
-            image: "/assets/auto3.jpg"
+            image: "./assets/auto3.jpg"
         }
     ];
 
