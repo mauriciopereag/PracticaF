@@ -2,7 +2,7 @@ import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import './ImageCarousel.css';
 
-function ImageCarousel(props) {
+function ImageCarousel() {
     const items = [
         {
             name: "Porshe 911 GT3 RS",
@@ -27,12 +27,12 @@ function ImageCarousel(props) {
     );
 }
 
-function Item(props) {
+function Item({ item }) {
     return (
         <Paper className="carousel-item">
-            <img src={props.item.image} alt={props.item.name} className="carousel-image" />
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
+            <img src={item.image} alt={item.name} className="carousel-image" />
+            <h2>{item.name}</h2>
+            <p>{item.description}</p>
         </Paper>
     );
 }
