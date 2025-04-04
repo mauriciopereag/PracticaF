@@ -1,14 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Seminuevos de Lujo</title>
-    <link rel="stylesheet" href="./assets/index-DZUC3ExP.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      
+      .app-bar {
+        background-color: #044b85;
+        color: white;
+        padding: 0 16px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        flex-grow: 1;
+      }
+      
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 64px);
+        margin-top: 64px;
+        background-color: #f5f5f5;
+        padding: 20px;
+      }
+      
+      .contact-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        color: #1976d2;
+        font-weight: 400;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: #1976d2;
+        font-weight: 500;
+      }
+      
+      .contact-info {
+        margin-bottom: 20px;
+        color: #555;
+        font-size: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="./assets/index-DK--b9Yv.js"></script>
+    <header class="app-bar">
+      <div class="title">Seminuevos de Lujo Monterrey</div>
+      <div>Página de Contacto</div>
+    </header>
+    
+    <div class="contact-container">
+      <div class="contact-card">
+        <h1>Contacto</h1>
+        <p class="contact-info">
+          Bienvenido a nuestra agencia de autos seminuevos. Ofrecemos una amplia variedad de vehículos de alta calidad a precios competitivos.
+        </p>
+        <h2>Dirección</h2>
+        <p class="contact-info">
+          Av. Garza Sada 1000, Monterrey, 64840, Nuevo León, México
+        </p>
+        <h2>Teléfono</h2>
+        <p class="contact-info">
+          +52 (81) 4756-9067
+        </p>
+        <h2>Email</h2>
+        <p class="contact-info">
+          contacto@seminuevoslujomty.com
+        </p>
+      </div>
+    </div>
   </body>
 </html>
