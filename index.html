@@ -3,103 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto - Seminuevos de Lujo</title>
+    <meta name="description" content="Seminuevos de Lujo Monterrey - Tu mejor opción en autos seminuevos de alta gama." />
+    <meta name="keywords" content="autos, seminuevos, lujo, monterrey, compra, venta" />
+    <meta name="author" content="Seminuevos de Lujo Monterrey" />
+    <title>Login - Seminuevos de Lujo</title>
     <style>
-      body {
+      html, body {
+        height: 100%;
         margin: 0;
         padding: 0;
+        background-color: #ffffff;
         font-family: 'Roboto', Arial, sans-serif;
-        background-color: #f5f5f5;
       }
       
-      .app-bar {
-        background-color: #044b85;
-        color: white;
-        padding: 0 16px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-      
-      .title {
-        font-size: 1.25rem;
-        font-weight: 500;
-        flex-grow: 1;
-      }
-      
-      .contact-container {
+      .login-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: calc(100vh - 64px);
-        margin-top: 64px;
-        background-color: #f5f5f5;
-        padding: 20px;
+        height: 100vh;
+        background-color: #ffffffc3;
+        padding: 0 20px;
       }
       
-      .contact-card {
+      .login-form {
+        width: 100%;
+        max-width: 400px;
         background: white;
         padding: 30px;
-        border-radius: 10px;
+        border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
-        text-align: center;
       }
       
       h1 {
-        font-size: 2rem;
-        margin-bottom: 16px;
-        color: #1976d2;
-        font-weight: 400;
-      }
-      
-      h2 {
-        font-size: 1.25rem;
-        margin-top: 20px;
-        margin-bottom: 8px;
-        color: #1976d2;
-        font-weight: 500;
-      }
-      
-      .contact-info {
         margin-bottom: 20px;
+        color: #333;
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: center;
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 8px;
         color: #555;
         font-size: 1rem;
+      }
+      
+      input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+      
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #1976d2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 10px;
+      }
+      
+      button:hover {
+        background-color: #1565c0;
       }
     </style>
   </head>
   <body>
-    <header class="app-bar">
-      <div class="title">Seminuevos de Lujo Monterrey</div>
-      <div>Página de Contacto</div>
-    </header>
-    
-    <div class="contact-container">
-      <div class="contact-card">
-        <h1>Contacto</h1>
-        <p class="contact-info">
-          Bienvenido a nuestra agencia de autos seminuevos. Ofrecemos una amplia variedad de vehículos de alta calidad a precios competitivos.
-        </p>
-        <h2>Dirección</h2>
-        <p class="contact-info">
-          Av. Garza Sada 1000, Monterrey, 64840, Nuevo León, México
-        </p>
-        <h2>Teléfono</h2>
-        <p class="contact-info">
-          +52 (81) 4756-9067
-        </p>
-        <h2>Email</h2>
-        <p class="contact-info">
-          contacto@seminuevoslujomty.com
-        </p>
+    <div class="login-container">
+      <div class="login-form">
+        <h1>Login</h1>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
       </div>
     </div>
+
+    <script>
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        console.log('Email:', email);
+        console.log('Password:', password);
+        window.location.href = 'home.html';
+      });
+    </script>
   </body>
 </html>
