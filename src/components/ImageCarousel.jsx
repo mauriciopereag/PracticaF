@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Carousel from 'react-material-ui-carousel';
 import { Paper } from '@mui/material';
 import './ImageCarousel.css';
